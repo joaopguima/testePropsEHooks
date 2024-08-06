@@ -1,20 +1,26 @@
-import React from "react";
-import Home from "./paginas/home/Home";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Login from "./paginas/home/Login";
+import React from 'react';
+import './App.css';
+import Home from './paginas/home/Home';
+import Navbar from './components/navbar/Navbar';
+import Footer from './components/footer/Footer';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Login from '../src/paginas/Login/Login';
 
 function App() {
   return (
     <>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/login" element={<Login />}></Route>
-          <Route path="/home" element={<Home />}></Route>
-        </Routes>
-      </BrowserRouter>
+    <BrowserRouter>
+        <Navbar />
+          <div className='min-h-[80vh]'>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/home" element={<Home />} />
+            </Routes>
+          </div>
+          <Footer />
+        </BrowserRouter>
     </>
-  );
+);
 }
-
 export default App;
